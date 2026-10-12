@@ -6,7 +6,7 @@
 (() => {
   const root = document.documentElement;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const mobileQuery = window.matchMedia('(max-width: 760px)');
+  const mobileQuery = window.matchMedia('(max-width: 900px)');
 
   /* ---------- Hero: split "portfolio" into animated letters ---------- */
 
@@ -99,6 +99,7 @@
   const toTop = document.querySelector('[data-to-top]');
 
   const setMenu = (open) => {
+    if (open) nav.classList.remove('is-hidden');
     root.classList.toggle('menu-open', open);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');

@@ -2,7 +2,7 @@
  * Layout mirrors the Canva design: every section is a 1366 x 768 artboard.
  * Positions/sizes are written in design pixels (--x, --y, --w, --h, --fs …)
  * and converted with --u (1 design px) so the page scales exactly like the
- * original on any desktop width. Below 760px the sections fall back to a
+ * original on any desktop width. Below 900px the sections fall back to a
  * stacked, readable mobile layout.
  */
 
@@ -52,6 +52,12 @@ a {
 }
 
 /* ---------- Artboard system ---------- */
+
+/* Keep the artboards from growing endlessly on ultra-wide monitors. */
+.page {
+  max-width: 1920px;
+  margin: 0 auto;
+}
 
 .section {
   position: relative;
@@ -179,7 +185,7 @@ img.abs {
 .bullets__link a {
   text-underline-offset: 0.15em;
   text-decoration-thickness: 0.05em;
-  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .note {
@@ -193,9 +199,9 @@ img.abs {
 /* ---------- 1. Hero ---------- */
 
 .hero__title {
-  font-size: calc(366.2 * var(--u));
-  line-height: calc(292.9 * var(--u));
-  letter-spacing: calc(-36.6 * var(--u));
+  font-size: calc(346 * var(--u));
+  line-height: calc(277 * var(--u));
+  letter-spacing: calc(-34.6 * var(--u));
   font-weight: 800;
   text-align: center;
   color: var(--ink);
@@ -324,14 +330,14 @@ a.hero__info--plain {
 
 /* ---------- Mobile: stacked layout ---------- */
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .section {
     aspect-ratio: auto;
     container-type: normal;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 56px 20px;
+    padding: 56px max(20px, calc((100% - 640px) / 2));
   }
 
   .section *,
@@ -392,29 +398,31 @@ a.hero__info--plain {
 
   /* Hero */
   .hero {
-    min-height: 92svh;
+    min-height: min(100svh, 820px);
     justify-content: center;
     align-items: center;
     gap: 0;
   }
 
   .hero__title {
+    --hero-fs: min(25vw, 220px);
     white-space: nowrap;
-    font-size: 25vw;
+    font-size: var(--hero-fs);
     line-height: 1;
     letter-spacing: -0.1em;
     margin-right: 0.1em;
   }
 
+  /* Signature sits in the flow and is pulled up over the title. */
   .hero__signature {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: calc(50% - 64px);
-    transform: translateY(-50%) rotate(-4.4deg);
+    position: relative;
     z-index: 1;
-    font-size: 15vw;
+    width: 100%;
+    margin-top: calc(min(25vw, 220px) * -0.64);
+    font-size: min(13vw, 104px);
     line-height: 1;
+    white-space: nowrap;
+    transform: rotate(-4.4deg);
   }
 
   .hero__meta {

@@ -22,7 +22,8 @@ python3 -m http.server 5173
 Each section is a 1366 × 768 artboard, matching the Canva page size. Elements are
 positioned with design-pixel values (`--x`, `--y`, `--w`, `--h`) that are converted
 to `cqw` units, so on desktop the page scales exactly like the original design.
-Below 760px the sections switch to a stacked mobile layout.
+Below 900px (phones, tablets in portrait) the sections switch to a stacked layout
+with a readable max line length.
 
 ```
 index.html          markup, one <section> per Canva page

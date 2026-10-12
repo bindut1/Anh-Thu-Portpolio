@@ -207,7 +207,7 @@ html {
   flex-direction: column;
   justify-content: space-between;
   gap: 32px;
-  padding: 104px 24px 32px;
+  padding: 96px max(24px, calc((100% - 560px) / 2)) 32px;
   overflow-y: auto;
   background: var(--bg);
   visibility: hidden;
@@ -229,14 +229,14 @@ html {
 .mobile-menu__links a {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding: 6px 0;
+  gap: 14px;
+  padding: 13px 0;
   border-bottom: 1px solid rgba(30, 30, 30, 0.1);
   font-family: var(--font-sans);
-  font-size: clamp(30px, 8.6vw, 56px);
-  font-weight: 800;
-  line-height: 1.12;
-  letter-spacing: -0.05em;
+  font-size: clamp(20px, 5.4vw, 28px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
   color: var(--ink);
   text-decoration: none;
   opacity: 0;
@@ -245,8 +245,9 @@ html {
 }
 
 .mobile-menu__links a small {
-  margin-top: 0.55em;
-  font-size: 12px;
+  min-width: 18px;
+  margin-top: 0.4em;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.08em;
   color: var(--red);
@@ -330,6 +331,17 @@ html {
 @media (min-width: 1101px) {
   .mobile-menu {
     display: none;
+  }
+}
+
+@media (max-height: 520px) {
+  .mobile-menu {
+    padding-top: 76px;
+  }
+
+  .mobile-menu__links a {
+    padding: 8px 0;
+    font-size: 18px;
   }
 }
 
@@ -635,7 +647,7 @@ html {
 
 /* ---------- Mobile tweaks ---------- */
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .section {
     padding-top: 84px;
   }
