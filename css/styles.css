@@ -386,7 +386,6 @@ a.hero__info--plain {
   }
 
   .display,
-  .hero__title,
   .hero__signature {
     white-space: normal;
   }
@@ -400,7 +399,8 @@ a.hero__info--plain {
   }
 
   .hero__title {
-    font-size: 26vw;
+    white-space: nowrap;
+    font-size: 25vw;
     line-height: 1;
     letter-spacing: -0.1em;
     margin-right: 0.1em;

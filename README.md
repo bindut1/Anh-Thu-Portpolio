@@ -27,8 +27,23 @@ Below 760px the sections switch to a stacked mobile layout.
 ```
 index.html          markup, one <section> per Canva page
 css/styles.css      artboard system, typography, mobile layout
+css/motion.css      navigation, animations, lightbox, back-to-top
+js/main.js          scroll reveal, parallax, active nav, mobile menu, lightbox
 assets/images/      images exported from the Canva design
 ```
+
+## Motion & navigation
+
+- Floating pill navigation (desktop) / hamburger full-screen menu (≤1100px),
+  auto-hides on scroll down, highlights the current section
+- Hero intro: staggered letters, hand-written signature reveal, scroll cue
+- Scroll reveal for headings, text, lists and images; subtle background parallax
+  on desktop
+- Scroll progress bar, back-to-top button, click-to-zoom lightbox for mockups
+- Respects `prefers-reduced-motion`; content stays visible without JavaScript
+
+When changing CSS/JS, bump the `?v=` query in `index.html` so visitors get the
+new files instead of a cached copy.
 
 ## Deploy
 
