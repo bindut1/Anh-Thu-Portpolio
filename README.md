@@ -8,7 +8,7 @@ articles and contact).
 ## Stack
 
 - Plain HTML + CSS, no build step
-- Google Fonts: Montserrat, Mrs Saint Delafield, Cormorant Garamond, Arimo
+- Google Fonts: Montserrat, Mrs Saint Delafield
 
 ## Run locally
 

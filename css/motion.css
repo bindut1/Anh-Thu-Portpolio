@@ -530,14 +530,12 @@ html {
 
   .hero__info,
   .bullets__link a,
-  .contact__list a,
   .mobile-menu__footer a {
     transition: color 0.25s, opacity 0.25s;
   }
 
   a.hero__info:hover,
-  .bullets__link a:hover,
-  .contact__list a:hover {
+  .bullets__link a:hover {
     color: var(--red);
     opacity: 1;
   }
