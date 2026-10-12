@@ -37,7 +37,7 @@
   const revealGroups = [
     ['.display, .intro__hello', 'up'],
     ['.label-heading', 'track'],
-    ['.body-text, .note, .pdp__copy p, .bullets li', 'up'],
+    ['.body-text, .note, .pdp__subhead, .benefits li, .pdp__closing, .bullets li', 'up'],
     ['.crop, .pdp__shot, .social__img, .article__img, .idea-light__phone', 'image'],
     ['.contact__card', 'up'],
     ['.contact__sticker', 'pop'],

@@ -160,7 +160,11 @@ img.abs {
   font-size: calc(26.7 * var(--u));
   line-height: calc(38 * var(--u));
   letter-spacing: calc(-0.5 * var(--u));
-  text-align: justify;
+  text-align: left;
+}
+
+.bullets li + li {
+  margin-top: calc(6 * var(--u));
 }
 
 .bullets li::marker {
@@ -255,14 +259,62 @@ a.hero__info--plain {
 /* ---------- 7. PDP copy ---------- */
 
 .pdp__copy {
-  font-size: calc(26.7 * var(--u));
-  line-height: calc(38 * var(--u));
-  letter-spacing: calc(-0.5 * var(--u));
-  text-align: justify;
+  font-size: calc(24 * var(--u));
+  line-height: calc(34 * var(--u));
+  letter-spacing: calc(-0.4 * var(--u));
 }
 
-.pdp__copy p {
-  text-align-last: left;
+.pdp__subhead {
+  display: flex;
+  align-items: center;
+  gap: calc(14 * var(--u));
+  margin-bottom: calc(14 * var(--u));
+  font-size: calc(26.7 * var(--u));
+  line-height: calc(38 * var(--u));
+  font-weight: 700;
+}
+
+.pdp__subhead::before {
+  content: "";
+  flex: none;
+  width: calc(32 * var(--u));
+  height: 2px;
+  background: var(--red);
+}
+
+.benefits {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.benefits li {
+  position: relative;
+  padding-left: calc(32 * var(--u));
+}
+
+.benefits li + li {
+  margin-top: calc(12 * var(--u));
+}
+
+.benefits li::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  color: var(--red);
+}
+
+.benefits strong {
+  font-weight: 700;
+}
+
+.pdp__closing {
+  margin-top: calc(20 * var(--u));
+  padding-top: calc(18 * var(--u));
+  border-top: 1px solid rgba(30, 30, 30, 0.15);
+  font-style: italic;
 }
 
 /* ---------- 9 / 11 / 12. Content blocks ---------- */
@@ -475,6 +527,7 @@ a.hero__info--plain {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0;
+    text-align: left;
   }
 
   .bullets,
@@ -488,6 +541,34 @@ a.hero__info--plain {
 
   .pdp__copy {
     padding-left: 0;
+  }
+
+  .pdp__subhead {
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .pdp__subhead::before {
+    width: 24px;
+  }
+
+  .benefits li {
+    padding-left: 22px;
+  }
+
+  .benefits li + li {
+    margin-top: 10px;
+  }
+
+  .pdp__closing {
+    margin-top: 16px;
+    padding-top: 14px;
+  }
+
+  .bullets li + li {
+    margin-top: 8px;
   }
 
   .note {
