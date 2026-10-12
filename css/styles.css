@@ -272,6 +272,11 @@ a.hero__info--plain {
   object-fit: cover;
 }
 
+/* Narrower column: left-align to avoid wide gaps from justification. */
+.article__list {
+  text-align: left;
+}
+
 /* ---------- 13. Contact ---------- */
 
 .contact__photo {
