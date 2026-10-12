@@ -310,13 +310,6 @@ a.hero__info--plain {
   font-weight: 700;
 }
 
-.pdp__closing {
-  margin-top: calc(20 * var(--u));
-  padding-top: calc(18 * var(--u));
-  border-top: 1px solid rgba(30, 30, 30, 0.15);
-  font-style: italic;
-}
-
 /* ---------- 9 / 11 / 12. Content blocks ---------- */
 
 .social__img,
@@ -560,11 +553,6 @@ a.hero__info--plain {
 
   .benefits li + li {
     margin-top: 10px;
-  }
-
-  .pdp__closing {
-    margin-top: 16px;
-    padding-top: 14px;
   }
 
   .bullets li + li {
